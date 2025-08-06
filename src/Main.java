@@ -1,3 +1,9 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+import java.util.List;
+
+import models.Producto;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,6 +41,15 @@ public class Main {
                 new Producto("Ventilador USB", "030", Arrays.asList(8.0, 10.0, 8.0, 12.0, 10.0))
 
         );
+
+
+        Producto p = new Producto("Teclado Logitech", "T001", Arrays.asList(45.0, 46.0));
+        int porcentaje = p.getPorcentajeCaracteresUnicos();
+        assertEquals(66, porcentaje, "El porcentaje de caracteres únicos debería ser 66");
+
+
+        int repetidos = p.getCatidadPreciosRepetidos(); // 2 veces 100.0 => 1 repetido
+        assertEquals(1, repetidos, "La cantidad de precios repetidos debería ser 1");
 
     }
 }
